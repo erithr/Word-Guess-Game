@@ -17,7 +17,7 @@ asteriskSpan.innerText = asterisksWord
 }
 
 function chooseRandomWord() {
-    ... words[random]
+     words[random]
 }
 
 function reset() {
