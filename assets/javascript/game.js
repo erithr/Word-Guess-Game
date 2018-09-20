@@ -21,6 +21,10 @@ var asteriskSpan = document.getElementById("asterisks");
 var guessSpan = document.getElementById("guessedLetters");
 var triesSpan = document.getElementById("tries");
 
+
+//display dafault win state to be reference in later code
+winsSpan.innerText = wins;
+
 // display one asterik per letter on the screen
 // for a specific word
 // select the element from the DOM
@@ -28,22 +32,53 @@ var triesSpan = document.getElementById("tries");
 var asterisksWord = "";
 for (var i = 0; i < random.length; i++) {
     asterisksWord += "*";
-asteriskSpan.innerText = asterisksWord
-}
-//take user input and check it against
+asteriskSpan.innerText = asterisksWord;
 
+if ((asterisksWord.indexOf(letter))== letter){
+    asterisksWord[i]= letter;
+    console.log(letter);
+}
+};
+
+
+
+//take user input and check it against the asterisk word
+
+    //replace function
+
+    //lower chances tracker
+
+
+//display default guesses remaning
+triesSpan.innerHTML = maxTries;
 
 
 //and display the guesses on screen
 document.onkeyup = function(event) {
+    var letter = event.key.toLocaleLowerCase();
     guessSpan.innerText += event.key + "-";
+    //stores input for later function use
+    
+    
+
 
 }
-//display default guesses remaning
-triesSpan.innerHTML = maxTries;
 
-//display dafault win state to be reference in later code
-winsSpan.innerText = wins;
+
+
+
+
+// consider using an object make you game state an obect and make wins guesses also an object, using "this"= look to the left
+wins(wins, 1);
+var wins = wins(wins,1);
+console.log(wins);
+
+
+
+
+//win function need help setting up
+// .onkeyup = function(){
+//     winsSpan.innerText += wins + 1;
 
 
 // if user inputs a letter it checks to see if it is correct and then it appears. 
